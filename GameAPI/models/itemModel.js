@@ -23,12 +23,12 @@ const itemSchema = new mongoose.Schema(
       default: "common",
     },
     maxQuantityPerSlot: {
-      type: Int16Array,
+      type: Number,
       required: true,
       default: -1,
     },
     maxSlot: {
-      type: Int16Array,
+      type: Number,
       required: true,
       default: -1,
     },

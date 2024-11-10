@@ -23,8 +23,7 @@ public class Login : MonoBehaviour
         Debug.Log("Login successful");
         GameDataManager.Instance.SetUserData(userData);
         message.text = "";
-        UIManager.Instance.ConnexionUI.SetActive(false);
-        UIManager.Instance.InventoryUI.SetActive(true);
+        ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
     }
 
     // This will be called if the login fails

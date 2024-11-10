@@ -28,8 +28,7 @@ public class Signup : MonoBehaviour
         Debug.Log("Signup successful");
         GameDataManager.Instance.SetUserData(userData);
         message.text = "";
-        UIManager.Instance.ConnexionUI.SetActive(false);
-        UIManager.Instance.InventoryUI.SetActive(true);
+        ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
     }
 
     /// <summary>

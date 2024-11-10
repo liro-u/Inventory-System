@@ -26,10 +26,15 @@ public class GameDataManager : MonoBehaviour
     public UserData currentUserData; // Holds the current user data in memory
     public List<UserItem> userInventory; // The user's inventory
 
+    // Delegate and event for user connection
+    public delegate void UserConnectionHandler();
+    public event UserConnectionHandler OnUserConnection;
+
     // Set user data
     public void SetUserData(UserData userData)
     {
         currentUserData = userData;
+        OnUserConnection?.Invoke();
     }
 
     // Set user inventory
