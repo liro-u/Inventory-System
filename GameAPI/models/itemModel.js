@@ -1,0 +1,41 @@
+import mongoose from "mongoose";
+
+const itemSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      enum: ["weapon", "consumable", "resource", "equipment", "none"],
+      required: true,
+      default: "none",
+    },
+    rarity: {
+      type: String,
+      enum: ["common", "rare", "epic", "legendary"],
+      required: true,
+      default: "common",
+    },
+    maxQuantityPerSlot: {
+      type: Int16Array,
+      required: true,
+      default: -1,
+    },
+    maxSlot: {
+      type: Int16Array,
+      required: true,
+      default: -1,
+    },
+  },
+  { timestamps: true }
+);
+
+const Item = mongoose.model("Item", itemSchema);
+
+export default Item;
