@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WelcomeUI : MonoBehaviour
@@ -14,6 +15,7 @@ public class WelcomeUI : MonoBehaviour
     public Button logoutButton;
     public Button loginButton;
     public Button settingsButton;
+    public Button startGameButton;
 
     [Header("Debug")]
     public bool forceConnectionMode = false;
@@ -22,6 +24,7 @@ public class WelcomeUI : MonoBehaviour
     {
         GameDataManager.Instance.OnUserConnection += OnUserConnexion;
         quitButton.onClick.AddListener(QuitGame);
+        startGameButton.onClick.AddListener(StartGame);
     }
 
     private void Awake()
@@ -62,5 +65,11 @@ public class WelcomeUI : MonoBehaviour
         // If built, quit the application
         Application.Quit();
 #endif
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Game");
+        gameObject.SetActive(false);
     }
 }
