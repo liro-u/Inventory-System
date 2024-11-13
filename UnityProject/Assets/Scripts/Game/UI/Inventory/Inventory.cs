@@ -58,13 +58,13 @@ public class Inventory : MonoBehaviour
                     }
 
                     // Here you can set up the slot's properties based on the item data
-                    var quantityTransform = newSlot.transform.Find("Item Quantity");
+                    var quantityTransform = newSlot.transform.Find("Quantity Overlay/Item Quantity");
                     if (quantityTransform is not null)
                     {
-                        quantityTransform.GetComponent<TextMeshPro>().text =
+                        quantityTransform.GetComponent<TextMeshProUGUI>().text =
                             (quantity > userItem.itemId.maxQuantityPerSlot
                                 ? userItem.itemId.maxQuantityPerSlot
-                                : quantity) + "/" + userItem.itemId.maxQuantityPerSlot;
+                                : quantity).ToString();
                     }
 
                     quantity -= userItem.itemId.maxQuantityPerSlot;
@@ -82,11 +82,11 @@ public class Inventory : MonoBehaviour
                 }
 
                 // Here you can set up the slot's properties based on the item data
-                var quantityTransform = newSlot.transform.Find("Item Quantity");
+                var quantityTransform = newSlot.transform.Find("Quantity Overlay/Item Quantity");
                 if (quantityTransform is not null)
                 {
-                    quantityTransform.GetComponent<TextMeshPro>().text =
-                        quantity + "/" + userItem.itemId.maxQuantityPerSlot;
+                    quantityTransform.GetComponent<TextMeshProUGUI>().text =
+                        quantity.ToString();
                 }
             }
         }
