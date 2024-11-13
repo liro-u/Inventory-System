@@ -10,15 +10,15 @@ public static class UserItemService
     private const string getUserItemsEndpoint = "/api/userItems";
 
     // This method sends a PATCH request to add a quantity of item to the user
-    public static IEnumerator AddItemQuantityToUser(string itemId, int quantity, Action<UserItem> onSuccess, Action<GameAPIErrorResponse> onError)
+    public static IEnumerator AddItemQuantityToUser(string itemId, int quantity, Action<AddUserItem> onSuccess, Action<GameAPIErrorResponse> onError)
     {
-        string url = APIManager.Instance.GameApiUrl + addItemQuantityEndpoint;
+        var url = APIManager.Instance.GameApiUrl + addItemQuantityEndpoint;
 
         var payload = new { itemId, quantity };
-        string jsonBody = JsonUtility.ToJson(payload);
+        var jsonBody = JsonUtility.ToJson(payload);
 
-        UnityWebRequest request = new UnityWebRequest(url, "PATCH");
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
+        var request = new UnityWebRequest(url, "PATCH");
+        var bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
@@ -28,12 +28,12 @@ public static class UserItemService
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            GameAPIErrorResponse gameAPIErrorResponse = JsonUtility.FromJson<GameAPIErrorResponse>(request.downloadHandler.text);
+            var gameAPIErrorResponse = JsonUtility.FromJson<GameAPIErrorResponse>(request.downloadHandler.text);
             onError?.Invoke(gameAPIErrorResponse);
         }
         else
         {
-            UserItem userItem = JsonUtility.FromJson<UserItem>(request.downloadHandler.text);
+            var userItem = JsonUtility.FromJson<AddUserItem>(request.downloadHandler.text);
             onSuccess?.Invoke(userItem);
         }
     }

@@ -1,28 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
     public GameObject inventoryGrid;
     public GameObject ItemSlotPrefab;
 
-    void Start()
+    private void Start()
     {
         // Start the inventory fetch process via UserItemService
         StartCoroutine(UserItemService.FetchUserItems(OnFetchUserItemsSuccess, OnFetchUserItemsError));
     }
 
-    void OnFetchUserItemsSuccess(UserItems userItems)
+    private void OnFetchUserItemsSuccess(UserItems userItems)
     {
-        Debug.Log("Fetch Inventory Successfuly");
-        List<UserItem> userItemsList = new List<UserItem>(userItems.items);
+        Debug.Log("Fetch Inventory Successfully");
+        var userItemsList = new List<UserItem>(userItems.items);
         GameDataManager.Instance.SetUserInventory(userItemsList);
         UpdateInventoryGrid();
     }
 
-    void OnFetchUserItemsError(GameAPIErrorResponse error)
+    private void OnFetchUserItemsError(GameAPIErrorResponse error)
     {
         Debug.LogError(error.errors.global);
     }
@@ -36,24 +37,46 @@ public class Inventory : MonoBehaviour
         }
 
         // Get the user inventory from GameDataManager
-        List<UserItem> userInventory = GameDataManager.Instance.userInventory;
+        var userInventory = GameDataManager.Instance.userInventory;
 
         // Loop through the inventory list and create a slot for each item
-        for (int i = 0; i < userInventory.Count; i++)
+        foreach (var userItem in userInventory)
         {
-            UserItem item = userInventory[i];
+            var quantity = userItem.quantity;
+            var numberOfSlots = Math.Ceiling((double)quantity / userItem.itemId.maxQuantityPerSlot);
+            if (numberOfSlots > 0)
+            {
+                for (var i = 0; i < numberOfSlots; i++)
+                {
+                    // Instantiate a new item slot
+                    var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
 
-            // Instantiate a new item slot
-            GameObject newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
+                    // Here you can set up the slot's properties based on the item data
+                    var quantityTransform = newSlot.transform.Find("Item Quantity");
+                    if (quantityTransform is not null)
+                    {
+                        quantityTransform.GetComponent<TextMeshPro>().text =
+                            (quantity > userItem.itemId.maxQuantityPerSlot
+                                ? userItem.itemId.maxQuantityPerSlot
+                                : quantity) + "/" + userItem.itemId.maxQuantityPerSlot;
+                    }
 
-            // Here you can set up the slot's properties based on the item data
-            // Example: Set item name, quantity, or icon in the slot
-            //ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
-            //if (slotComponent != null)
-            //{
-            //    slotComponent.Setup(item); // Assuming 'Setup' is a method in 'ItemSlot' to initialize the slot
-            //}
+                    quantity -= userItem.itemId.maxQuantityPerSlot;
+                }
+            }
+            else
+            {
+                // Instantiate a new item slot
+                var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
+
+                // Here you can set up the slot's properties based on the item data
+                var quantityTransform = newSlot.transform.Find("Item Quantity");
+                if (quantityTransform is not null)
+                {
+                    quantityTransform.GetComponent<TextMeshPro>().text =
+                        quantity + "/" + userItem.itemId.maxQuantityPerSlot;
+                }
+            }
         }
     }
-
 }

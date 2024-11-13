@@ -7,6 +7,12 @@ public class UserItem
     public int quantity;
 }
 
+public class AddUserItem
+{
+    public UserItem userItem;
+    public int remainingQuantity;
+}
+
 public class UserItems
 {
     public UserItem[] items;
