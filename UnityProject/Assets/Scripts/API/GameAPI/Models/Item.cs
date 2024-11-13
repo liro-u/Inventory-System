@@ -6,5 +6,7 @@ public class Item
     public string description;
     public string type;
     public string rarity;
+    public int maxQuantityPerSlot;
+    public int maxSlot;
 }
 
