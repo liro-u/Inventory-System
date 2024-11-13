@@ -16,6 +16,12 @@ public class WelcomeUI : MonoBehaviour
     public Button loginButton;
     public Button settingsButton;
     public Button startGameButton;
+    public Button connectBackgroundButton;
+
+    [Header("Next Scene")]
+    public bool useSceneId = true;
+    public int nextSceneId = 1;
+    public string nextSceneName = "Game";
 
     [Header("Debug")]
     public bool forceConnectionMode = false;
@@ -25,6 +31,8 @@ public class WelcomeUI : MonoBehaviour
         GameDataManager.Instance.OnUserConnection += OnUserConnexion;
         quitButton.onClick.AddListener(QuitGame);
         startGameButton.onClick.AddListener(StartGame);
+        connectBackgroundButton.onClick.AddListener(ConnexionUIManager.Instance.ToggleConnexionUI);
+        loginButton.onClick.AddListener(ConnexionUIManager.Instance.ToggleConnexionUI);
     }
 
     private void Awake()
@@ -69,7 +77,14 @@ public class WelcomeUI : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        if (useSceneId)
+        {
+            SceneManager.LoadScene(nextSceneId);
+        }
+        else
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
         gameObject.SetActive(false);
     }
 }
