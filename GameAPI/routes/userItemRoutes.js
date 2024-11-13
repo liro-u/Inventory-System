@@ -1,6 +1,6 @@
 import express from "express";
 import userItemController from "../controllers/userItemController.js";
-import requireAuth from "../middlewares/requireAdmin.js";
+import requireAuth from "../middlewares/requireAuth.js";
 
 const router = express.Router();
 
