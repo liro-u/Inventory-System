@@ -8,7 +8,7 @@ public class InventoryToggle : MonoBehaviour
 {
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] private bool enableByDefault = false;
-    [SerializeField] private KeyCode openInventoryKey = KeyCode.LeftShift;
+    [SerializeField] private KeyCode openInventoryKey = KeyCode.E;
     private void Awake()
     {
         inventoryUI.SetActive(enableByDefault);

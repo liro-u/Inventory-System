@@ -1407,7 +1407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1439,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: nextSceneId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: forceConnectionMode
