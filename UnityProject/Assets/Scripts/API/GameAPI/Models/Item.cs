@@ -1,3 +1,5 @@
+using UnityEngine;
+
 [System.Serializable]
 public class Item
 {
@@ -10,3 +12,22 @@ public class Item
     public int maxSlot;
 }
 
+public class Items
+{
+    public Item[] items;
+}
+
+[System.Serializable]
+public class AdditionalItemData
+{
+    public string name;
+    public Sprite sprite;
+    public GameObject prefab3D;
+}
+
+[System.Serializable]
+public class ItemDataPair
+{
+    public string key;
+    public AdditionalItemData value;
+}

@@ -106,7 +106,7 @@ export const getItemById = async (req, res) => {
 export const getAllItems = async (req, res) => {
   try {
     const items = await Item.find();
-    res.status(200).json(items);
+    res.status(200).json({ items });
   } catch (error) {
     res.status(500).json({ errors: { global: "Failed to fetch items" } });
   }
