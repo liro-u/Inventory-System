@@ -8,15 +8,17 @@ public class InventoryUI : MonoBehaviour
     public static InventoryUI Instance;
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
+    public TextMeshProUGUI itemQuantity;
 
     void Awake()
     {
         Instance = this;
     }
 
-    public void ShowItemDetails(string name, string description)
+    public void ShowItemDetails(string itemName, string description, int quantity, int maxQuantity)
     {
-        itemNameText.text = name;
+        itemNameText.text = itemName;
         itemDescriptionText.text = description;
+        itemQuantity.text = quantity + (maxQuantity > 0 ? " / " + maxQuantity : "");
     }
 }

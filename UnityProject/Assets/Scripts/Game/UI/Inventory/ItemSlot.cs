@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    private string itemId;
+    private Item itemId;
     private string itemName;
     private string itemDescription;
+    private int itemQuantity;
+    
 
     private void Awake()
     {
@@ -21,14 +23,15 @@ public class ItemSlot : MonoBehaviour
 
     public void Setup(UserItem userItem)
     {
-        itemId = userItem.itemId._id;
+        itemId = userItem.itemId;
         itemName = userItem.itemId.name;
         itemDescription = userItem.itemId.description;
+        itemQuantity = userItem.quantity;
 
     }
 
     public void OnItemClick()
     {
-        InventoryUI.Instance.ShowItemDetails(itemName, itemDescription);
+        InventoryUI.Instance.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot);
     }
 }
