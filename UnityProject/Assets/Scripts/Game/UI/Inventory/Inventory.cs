@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateInventoryGrid()
     {
-        // Clear all existing children in the inventory grid
+        // Effacer tous les éléments enfants existants dans la grille d'inventaire
         foreach (Transform child in inventoryGrid.transform)
         {
             Destroy(child.gameObject);
@@ -50,6 +50,12 @@ public class Inventory : MonoBehaviour
                 {
                     // Instantiate a new item slot
                     var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
+                    
+                    ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
+                    if (slotComponent != null)
+                    {
+                        slotComponent.Setup(userItem);
+                    }
 
                     // Here you can set up the slot's properties based on the item data
                     var quantityTransform = newSlot.transform.Find("Item Quantity");
@@ -69,6 +75,12 @@ public class Inventory : MonoBehaviour
                 // Instantiate a new item slot
                 var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
 
+                ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
+                if (slotComponent != null)
+                {
+                    slotComponent.Setup(userItem);
+                }
+
                 // Here you can set up the slot's properties based on the item data
                 var quantityTransform = newSlot.transform.Find("Item Quantity");
                 if (quantityTransform is not null)
@@ -78,5 +90,10 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+
     }
 }
+
+
+
+
