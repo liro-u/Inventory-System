@@ -10,10 +10,13 @@ import morgan from "morgan";
 import https from "https";
 import fs from "fs";
 
+import tryAddAuthWithUserAPI from "./middlewares/tryAddAuthUsingUserAPI.js";
+
 // routes
 import itemRoutes from "./routes/itemRoutes.js";
 import userItemRoutes from "./routes/userItemRoutes.js";
-import tryAddAuthWithUserAPI from "./middlewares/tryAddAuthUsingUserAPI.js";
+import currencyRoutes from "./routes/currencyRoutes.js";
+import userCurrencyRoutes from "./routes/userCurrencyRoutes.js";
 
 // express app
 const app = express();
@@ -63,6 +66,9 @@ app.use((req, res, next) => {
 // routes
 app.use("/api/items", itemRoutes);
 app.use("/api/userItems", userItemRoutes);
+
+app.use("/api/currencies", currencyRoutes);
+app.use("/api/userCurrencies", userCurrencyRoutes);
 
 // connect to db
 console.log("starting server...");
