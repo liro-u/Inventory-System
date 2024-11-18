@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,12 @@ public class ItemSlot : MonoBehaviour
     private string itemName;
     private string itemDescription;
     private int itemQuantity;
-    
+    private Sprite sprite;
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI quantityText;
+    [SerializeField] private Image icon;
+
 
     private void Awake()
     {
@@ -21,17 +27,20 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
-    public void Setup(UserItem userItem)
+    public void Setup(UserItem userItem, int quantity)
     {
         itemId = userItem.itemId;
         itemName = userItem.itemId.name;
         itemDescription = userItem.itemId.description;
         itemQuantity = userItem.quantity;
+        sprite = GameDataManager.Instance.itemAdditionalData.GetAdditionalDataById(userItem.itemId._id).sprite;
 
+        icon.sprite = sprite;
+        quantityText.text = quantity.ToString();
     }
 
     public void OnItemClick()
     {
-        InventoryUI.Instance.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot);
+        InventoryUI.Instance.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot, sprite);
     }
 }

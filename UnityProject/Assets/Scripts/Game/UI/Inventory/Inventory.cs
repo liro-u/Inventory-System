@@ -50,21 +50,13 @@ public class Inventory : MonoBehaviour
                 {
                     // Instantiate a new item slot
                     var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
-                    
+
+                    int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot ? userItem.itemId.maxQuantityPerSlot : quantity;
+
                     ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
                     if (slotComponent != null)
                     {
-                        slotComponent.Setup(userItem);
-                    }
-
-                    // Here you can set up the slot's properties based on the item data
-                    var quantityTransform = newSlot.transform.Find("Quantity Overlay/Item Quantity");
-                    if (quantityTransform is not null)
-                    {
-                        quantityTransform.GetComponent<TextMeshProUGUI>().text =
-                            (quantity > userItem.itemId.maxQuantityPerSlot
-                                ? userItem.itemId.maxQuantityPerSlot
-                                : quantity).ToString();
+                        slotComponent.Setup(userItem, quantity);
                     }
 
                     quantity -= userItem.itemId.maxQuantityPerSlot;
@@ -78,15 +70,7 @@ public class Inventory : MonoBehaviour
                 ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
                 if (slotComponent != null)
                 {
-                    slotComponent.Setup(userItem);
-                }
-
-                // Here you can set up the slot's properties based on the item data
-                var quantityTransform = newSlot.transform.Find("Quantity Overlay/Item Quantity");
-                if (quantityTransform is not null)
-                {
-                    quantityTransform.GetComponent<TextMeshProUGUI>().text =
-                        quantity.ToString();
+                    slotComponent.Setup(userItem, quantity);
                 }
             }
         }

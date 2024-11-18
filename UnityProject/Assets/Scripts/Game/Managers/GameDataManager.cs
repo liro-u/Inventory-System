@@ -23,6 +23,7 @@ public class GameDataManager : MonoBehaviour
     }
 
     [Header("Game Data")]
+    public ItemDictionarySO itemAdditionalData;
     public UserData currentUserData; // Holds the current user data in memory
     public List<UserItem> userInventory; // The user's inventory
 
