@@ -21,7 +21,7 @@ public class Login : MonoBehaviour
     public void OnLoginSuccess(UserData userData)
     {
         Debug.Log("Login successful");
-        GameDataManager.Instance.SetUserData(userData);
+        GameDataManager.Instance.ConnectionData.CurrentUserData = userData;
         message.text = "";
         ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
     }

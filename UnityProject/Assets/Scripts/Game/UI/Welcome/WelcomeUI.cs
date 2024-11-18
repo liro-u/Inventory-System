@@ -28,7 +28,7 @@ public class WelcomeUI : MonoBehaviour
 
     void Start()
     {
-        GameDataManager.Instance.OnUserConnection += OnUserConnexion;
+        GameDataManager.Instance.ConnectionData.OnUserConnection += OnUserConnexion;
         quitButton.onClick.AddListener(QuitGame);
         startGameButton.onClick.AddListener(StartGame);
         connectBackgroundButton.onClick.AddListener(ConnexionUIManager.Instance.ToggleConnexionUI);
@@ -43,7 +43,7 @@ public class WelcomeUI : MonoBehaviour
 
     public void OnUserConnexion()
     {
-        userDataText.text = GameDataManager.Instance.currentUserData.pseudo;
+        userDataText.text = GameDataManager.Instance.ConnectionData.CurrentUserData.pseudo;
         ShowConnectedUI(true);
         ShowNotConnectedUI(false);
     }

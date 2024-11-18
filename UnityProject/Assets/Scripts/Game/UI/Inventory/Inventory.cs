@@ -9,23 +9,16 @@ public class Inventory : MonoBehaviour
     public GameObject inventoryGrid;
     public GameObject ItemSlotPrefab;
 
-    private void Start()
+    private bool hasSimulateClickOnFirst = false;
+
+    private void Awake()
     {
-        // Start the inventory fetch process via UserItemService
-        StartCoroutine(UserItemService.FetchUserItems(OnFetchUserItemsSuccess, OnFetchUserItemsError));
+        GameDataManager.Instance.InventoryData.OnUserInventoryChange += UpdateInventoryGrid;
     }
 
-    private void OnFetchUserItemsSuccess(UserItems userItems)
+    private void OnEnable()
     {
-        Debug.Log("Fetch Inventory Successfully");
-        var userItemsList = new List<UserItem>(userItems.items);
-        GameDataManager.Instance.SetUserInventory(userItemsList);
         UpdateInventoryGrid();
-    }
-
-    private void OnFetchUserItemsError(GameAPIErrorResponse error)
-    {
-        Debug.LogError(error.errors.global);
     }
 
     private void UpdateInventoryGrid()
@@ -37,44 +30,45 @@ public class Inventory : MonoBehaviour
         }
 
         // Get the user inventory from GameDataManager
-        var userInventory = GameDataManager.Instance.userInventory;
+        var userInventory = GameDataManager.Instance.InventoryData.UserInventory;
 
         // Loop through the inventory list and create a slot for each item
         foreach (var userItem in userInventory)
         {
             var quantity = userItem.quantity;
-            var numberOfSlots = Math.Ceiling((double)quantity / userItem.itemId.maxQuantityPerSlot);
+            var numberOfSlots = (int)Mathf.Ceil((float)quantity / userItem.itemId.maxQuantityPerSlot);
             if (numberOfSlots > 0)
             {
                 for (var i = 0; i < numberOfSlots; i++)
                 {
-                    // Instantiate a new item slot
-                    var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
-
                     int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot ? userItem.itemId.maxQuantityPerSlot : quantity;
 
-                    ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
-                    if (slotComponent != null)
-                    {
-                        slotComponent.Setup(userItem, quantity);
-                    }
+                    CreateItemSlot(userItem, currentQuantity);
 
                     quantity -= userItem.itemId.maxQuantityPerSlot;
                 }
             }
             else
             {
-                // Instantiate a new item slot
-                var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
-
-                ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
-                if (slotComponent != null)
-                {
-                    slotComponent.Setup(userItem, quantity);
-                }
+                CreateItemSlot(userItem, quantity);
             }
         }
+    }
 
+    private void CreateItemSlot(UserItem userItem, int quantity)
+    {
+        var newSlot = Instantiate(ItemSlotPrefab, inventoryGrid.transform);
+
+        ItemSlot slotComponent = newSlot.GetComponent<ItemSlot>();
+        if (slotComponent != null)
+        {
+            slotComponent.Setup(userItem, quantity);
+            if (!hasSimulateClickOnFirst)
+            {
+                slotComponent.OnItemClick();
+                hasSimulateClickOnFirst = true;
+            }
+        }
     }
 }
 

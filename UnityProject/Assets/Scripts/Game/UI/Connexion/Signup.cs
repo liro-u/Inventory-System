@@ -26,7 +26,7 @@ public class Signup : MonoBehaviour
     public void OnSignupSuccess(UserData userData)
     {
         Debug.Log("Signup successful");
-        GameDataManager.Instance.SetUserData(userData);
+        GameDataManager.Instance.ConnectionData.CurrentUserData = userData;
         message.text = "";
         ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
     }

@@ -3,6 +3,18 @@ using UnityEngine;
 
 public class GameDataManager : MonoBehaviour
 {
+    [Header("Game Data")]
+    [SerializeField] private ItemDictionarySO itemAdditionalData;
+
+    [Header("Live Game Data")]
+    [SerializeField] private ConnectionDataSO connectionData;
+    [SerializeField] private InventoryDataSO inventoryData;
+
+    // Properties to expose the fields with a public getter but no public setter
+    public ItemDictionarySO ItemAdditionalData => itemAdditionalData;
+    public ConnectionDataSO ConnectionData => connectionData;
+    public InventoryDataSO InventoryData => inventoryData;
+
     // Singleton pattern to easily access GameDataManager
     private static GameDataManager _instance;
     public static GameDataManager Instance
@@ -22,43 +34,11 @@ public class GameDataManager : MonoBehaviour
         }
     }
 
-    [Header("Game Data")]
-    public ItemDictionarySO itemAdditionalData;
-    public UserData currentUserData; // Holds the current user data in memory
-    public List<UserItem> userInventory; // The user's inventory
-
-    // Delegate and event for user connection
-    public delegate void UserConnectionHandler();
-    public event UserConnectionHandler OnUserConnection;
-
-    // Set user data
-    public void SetUserData(UserData userData)
+    private void Awake()
     {
-        currentUserData = userData;
-        OnUserConnection?.Invoke();
-    }
+        connectionData = ScriptableObject.CreateInstance<ConnectionDataSO>();
+        inventoryData = ScriptableObject.CreateInstance<InventoryDataSO>();
 
-    // Set user inventory
-    public void SetUserInventory(List<UserItem> userItems)
-    {
-        userInventory = userItems;
-    }
-
-    // Add an item to inventory
-    public void AddItemToInventory(UserItem item)
-    {
-        userInventory.Add(item);
-    }
-
-    // Remove an item from inventory
-    public void RemoveItemFromInventory(UserItem item)
-    {
-        userInventory.Remove(item);
-    }
-
-    // Get user inventory as a list
-    public List<UserItem> GetInventory()
-    {
-        return userInventory;
+        connectionData.OnUserConnection += () => inventoryData.FetchUserInventory(this);
     }
 }

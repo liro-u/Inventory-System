@@ -33,7 +33,7 @@ public class ItemSlot : MonoBehaviour
         itemName = userItem.itemId.name;
         itemDescription = userItem.itemId.description;
         itemQuantity = userItem.quantity;
-        sprite = GameDataManager.Instance.itemAdditionalData.GetAdditionalDataById(userItem.itemId._id).sprite;
+        sprite = GameDataManager.Instance.ItemAdditionalData.GetAdditionalDataById(userItem.itemId._id).sprite;
 
         icon.sprite = sprite;
         quantityText.text = quantity.ToString();

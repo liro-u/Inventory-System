@@ -16,12 +16,12 @@ MonoBehaviour:
   - key: 672f5a9c378a0a7688fe2e11
     value:
       name: Iron Sword
-      sprite: {fileID: 21300000, guid: 2311094c4d0262a4a9499ab74fae5dac, type: 3}
+      sprite: {fileID: 21300000, guid: 50d96d33db55e1c4b86c8ba4683c19bb, type: 3}
       prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
   - key: 673478a31db17e3eb2c3e362
     value:
       name: Apple
-      sprite: {fileID: 21300000, guid: 2311094c4d0262a4a9499ab74fae5dac, type: 3}
+      sprite: {fileID: 21300000, guid: 47654f77af14a75408292b3a7a40ff8c, type: 3}
       prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
   - key: 6734b73049af84d66815a936
     value:

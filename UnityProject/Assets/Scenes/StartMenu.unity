@@ -454,13 +454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemAdditionalData: {fileID: 11400000, guid: a35abc5c4df4dd844906a1b3ae4ccffc, type: 2}
-  currentUserData:
-    _id: 
-    pseudo: 
-    token: 
-    isAdmin: 0
-    isOwner: 0
-  userInventory: []
+  connectionData: {fileID: 0}
+  inventoryData: {fileID: 0}
 --- !u!1001 &1063613427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1408,7 +1403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.y
