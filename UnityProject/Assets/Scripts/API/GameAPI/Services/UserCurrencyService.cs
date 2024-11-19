@@ -8,6 +8,7 @@ public static class UserCurrencyService
     private const string addCurrencyQuantityEndpoint = "/api/userCurrencies/addCurrencyQuantity";
     private const string removeCurrencyQuantityEndpoint = "/api/userCurrencies/removeCurrencyQuantity";
     private const string getUserCurrenciesEndpoint = "/api/userCurrencies";
+    private const string getUserCurrencyByCurrencyIdEndpoint = "/api/userCurrencies/";
 
     // This method sends a PATCH request to add a quantity of currency to the user
     public static IEnumerator AddCurrencyQuantityToUser(string currencyId, int quantity, Action<AddUserCurrency> onSuccess, Action<GameAPIErrorResponse> onError)
@@ -86,7 +87,7 @@ public static class UserCurrencyService
         }
         else
         {
-            // Parse the response into UserCurrency
+            // Parse the response into UserCurrencies
             UserCurrencies userCurrencies = JsonUtility.FromJson<UserCurrencies>(request.downloadHandler.text);
             onSuccess?.Invoke(userCurrencies);
         }

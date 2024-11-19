@@ -750,7 +750,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6462825980605357433}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.6666654
+  m_Size: 0.66666305
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -929,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 444, y: -169.99998}
+  m_AnchoredPosition: {x: 444, y: -170}
   m_SizeDelta: {x: 868, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6352394396618952402
@@ -2524,8 +2524,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6451525282297813801}
   m_HandleRect: {fileID: 1820596438969410419}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.50259775
+  m_Value: 1.0000032
+  m_Size: 0.5028175
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2623,7 +2623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.5699921}
+  m_AnchoredPosition: {x: 0, y: 1.5690918}
   m_SizeDelta: {x: 440, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4225668737331596265
@@ -4458,6 +4458,10 @@ PrefabInstance:
     - target: {fileID: 551553116479148980, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2004574543294378709, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
+      propertyPath: currencyId
+      value: 673d19832018bbb731f72fce
       objectReference: {fileID: 0}
     - target: {fileID: 7762466485668171169, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
       propertyPath: m_Name
@@ -11612,6 +11616,10 @@ PrefabInstance:
     - target: {fileID: 551553116479148980, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2004574543294378709, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
+      propertyPath: currencyId
+      value: 673d19a52018bbb731f72fd0
       objectReference: {fileID: 0}
     - target: {fileID: 7762466485668171169, guid: 7ee836f1a75f1a244ac2b45a7c909b9c, type: 3}
       propertyPath: m_Name

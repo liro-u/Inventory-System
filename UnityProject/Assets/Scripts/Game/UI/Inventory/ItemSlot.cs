@@ -15,16 +15,12 @@ public class ItemSlot : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI quantityText;
     [SerializeField] private Image icon;
+    [SerializeField] private Button button;
 
 
     private void Awake()
     {
-        // Attache l'événement de clic du bouton
-        Button button = GetComponent<Button>();
-        if (button != null)
-        {
-            button.onClick.AddListener(OnItemClick);
-        }
+        button.onClick.AddListener(OnItemClick);
     }
 
     public void Setup(UserItem userItem, int quantity)
@@ -32,7 +28,7 @@ public class ItemSlot : MonoBehaviour
         itemId = userItem.itemId;
         itemName = userItem.itemId.name;
         itemDescription = userItem.itemId.description;
-        itemQuantity = userItem.quantity;
+        itemQuantity = quantity;
         sprite = GameDataManager.Instance.ItemAdditionalData.GetAdditionalDataById(userItem.itemId._id).sprite;
 
         icon.sprite = sprite;

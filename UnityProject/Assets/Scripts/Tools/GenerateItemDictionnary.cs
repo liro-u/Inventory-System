@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class GenerateItemDictionary : MonoBehaviour
 {
+    [Header("Target SO")]
     [SerializeField] private ItemDictionarySO itemDictionarySO;
 
+    [Header("Override Params")]
     [SerializeField] private bool overrideName = true;
     [SerializeField] private bool overrideTexture = false;
     [SerializeField] private bool overridePrefab3D = false;
 
+    [Header("Actions")]
     [SerializeField] private bool generateItems = false;
 
     private void OnValidate()

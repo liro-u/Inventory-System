@@ -21,7 +21,7 @@ MonoBehaviour:
   - key: 673478a31db17e3eb2c3e362
     value:
       name: Apple
-      sprite: {fileID: 21300000, guid: 47654f77af14a75408292b3a7a40ff8c, type: 3}
+      sprite: {fileID: 21300000, guid: 0345a694989cb3846b3a635f2982f3de, type: 3}
       prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
   - key: 6734b73049af84d66815a936
     value:
