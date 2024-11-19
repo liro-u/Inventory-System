@@ -172,19 +172,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8266721279203725826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6309552615620063890}
-        m_TargetAssemblyTypeName: Login, Assembly-CSharp
-        m_MethodName: LoginButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1105445652226847219
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,19 +293,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2711470629999172011}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8696146621550355508}
-        m_TargetAssemblyTypeName: Signup, Assembly-CSharp
-        m_MethodName: SignupButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1160914010905754303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2056,7 @@ MonoBehaviour:
   message: {fileID: 1690995773642565228}
   idField: {fileID: 7636287663248436255}
   passwordField: {fileID: 3402400442269671642}
+  submitButton: {fileID: 6021613526048564196}
 --- !u!114 &8696146621550355508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,6 +2072,7 @@ MonoBehaviour:
   message: {fileID: 1690995773642565228}
   emailField: {fileID: 7636287663248436255}
   passwordField: {fileID: 3402400442269671642}
+  submitButton: {fileID: 4082347743960777788}
 --- !u!1 &7617457497244290289
 GameObject:
   m_ObjectHideFlags: 0

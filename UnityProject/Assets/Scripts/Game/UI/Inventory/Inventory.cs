@@ -3,17 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour
+public class Inventory : BaseUI
 {
+    [Header("Inventory Grid")]
     public GameObject inventoryGrid;
     public GameObject ItemSlotPrefab;
 
+    [Header("Inventory Detail")]
+    public TextMeshProUGUI itemNameText;
+    public TextMeshProUGUI itemDescriptionText;
+    public TextMeshProUGUI itemQuantityText;
+    public Image itemIconImage;
+
     private bool hasSimulateClickOnFirst = false;
 
-    private void Awake()
+    private void Start()
     {
         GameDataManager.Instance.InventoryData.OnUserInventoryChange += UpdateInventoryGrid;
+        UpdateInventoryGrid();
     }
 
     private void OnEnable()
@@ -29,28 +38,31 @@ public class Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Get the user inventory from GameDataManager
-        var userInventory = GameDataManager.Instance.InventoryData.UserInventory;
-
-        // Loop through the inventory list and create a slot for each item
-        foreach (var userItem in userInventory)
+        if (GameDataManager.Instance.InventoryData != null)
         {
-            var quantity = userItem.quantity;
-            var numberOfSlots = (int)Mathf.Ceil((float)quantity / userItem.itemId.maxQuantityPerSlot);
-            if (numberOfSlots > 0)
+            // Get the user inventory from GameDataManager
+            var userInventory = GameDataManager.Instance.InventoryData.UserInventory;
+
+            // Loop through the inventory list and create a slot for each item
+            foreach (var userItem in userInventory)
             {
-                for (var i = 0; i < numberOfSlots; i++)
+                var quantity = userItem.quantity;
+                var numberOfSlots = (int)Mathf.Ceil((float)quantity / userItem.itemId.maxQuantityPerSlot);
+                if (numberOfSlots > 0)
                 {
-                    int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot ? userItem.itemId.maxQuantityPerSlot : quantity;
+                    for (var i = 0; i < numberOfSlots; i++)
+                    {
+                        int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot ? userItem.itemId.maxQuantityPerSlot : quantity;
 
-                    CreateItemSlot(userItem, currentQuantity);
+                        CreateItemSlot(userItem, currentQuantity);
 
-                    quantity -= userItem.itemId.maxQuantityPerSlot;
+                        quantity -= userItem.itemId.maxQuantityPerSlot;
+                    }
                 }
-            }
-            else
-            {
-                CreateItemSlot(userItem, quantity);
+                else
+                {
+                    CreateItemSlot(userItem, quantity);
+                }
             }
         }
     }
@@ -69,6 +81,14 @@ public class Inventory : MonoBehaviour
                 hasSimulateClickOnFirst = true;
             }
         }
+    }
+
+    public void ShowItemDetails(string itemName, string description, int quantity, int maxQuantity, Sprite sprite)
+    {
+        itemNameText.text = itemName;
+        itemDescriptionText.text = description;
+        itemQuantityText.text = quantity + (maxQuantity > 0 ? " / " + maxQuantity : "");
+        itemIconImage.sprite = sprite;
     }
 }
 

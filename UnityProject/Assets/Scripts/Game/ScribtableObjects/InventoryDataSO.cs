@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InventoryDataSO : ScriptableObject
 {
-    [SerializeField] private List<UserItem> userInventory;
+    [SerializeField] private List<UserItem> userInventory = new List<UserItem>();
 
     // Public getter with private setter for inventoryData
     public List<UserItem> UserInventory

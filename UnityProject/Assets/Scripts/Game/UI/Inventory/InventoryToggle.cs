@@ -4,28 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InventoryToggle : MonoBehaviour
+public class UIToggle : MonoBehaviour
 {
-    [SerializeField] private GameObject inventoryUI;
-    [SerializeField] private bool enableByDefault = false;
-    [SerializeField] private KeyCode openInventoryKey = KeyCode.E;
-    private void Awake()
-    {
-        inventoryUI.SetActive(enableByDefault);
-        
-    }
+    [SerializeField] private KeyCode toggleKey = KeyCode.E;
+    [SerializeField] private string UIName = "";
 
     private void Update()
     {
-        if (Input.GetKeyDown(openInventoryKey))
+        if (Input.GetKeyDown(toggleKey))
         {
-            OnOpenInventoryPerformed();
+            OnToggle();
         }
     }
 
-    public void OnOpenInventoryPerformed()
+    public void OnToggle()
     {
-        inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
+        UILinker currentUI = UIManager.Instance.GetCurrentUIInHistory();
+        if (currentUI != null && currentUI.UIName == UIName)
+        {
+            UIManager.Instance.GoBackInHistory();
+        }
+        else
+        {
+            UIManager.Instance.OpenAndAddInHistoryByName(UIName);
+        }
     }
 
 

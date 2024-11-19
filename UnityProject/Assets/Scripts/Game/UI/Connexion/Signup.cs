@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Signup : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class Signup : MonoBehaviour
     public TextMeshProUGUI message;
     public TMP_InputField emailField;
     public TMP_InputField passwordField;
+    public Button submitButton;
+
+    void Start()
+    {
+        submitButton.onClick.AddListener(SignupButton);
+    }
 
     /// <summary>
     /// Called when the signup button is pressed. Retrieves user input and starts the signup process.
@@ -28,7 +35,7 @@ public class Signup : MonoBehaviour
         Debug.Log("Signup successful");
         GameDataManager.Instance.ConnectionData.CurrentUserData = userData;
         message.text = "";
-        ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
+        UIManager.Instance.GetCurrentUIInHistory().UIRef.CloseAllPopup();
     }
 
     /// <summary>

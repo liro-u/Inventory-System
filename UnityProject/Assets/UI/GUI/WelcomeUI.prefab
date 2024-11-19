@@ -2042,7 +2042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1436415295637482348
@@ -3076,6 +3076,9 @@ MonoBehaviour:
   settingsButton: {fileID: 5343719683695560818}
   startGameButton: {fileID: 4613172695123670223}
   connectBackgroundButton: {fileID: 3040575816959993597}
+  useSceneId: 1
+  nextSceneId: 1
+  nextSceneName: Game
   forceConnectionMode: 0
 --- !u!1 &8761364682247766567
 GameObject:

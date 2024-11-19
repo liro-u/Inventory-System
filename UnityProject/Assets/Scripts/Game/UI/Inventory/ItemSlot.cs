@@ -41,6 +41,7 @@ public class ItemSlot : MonoBehaviour
 
     public void OnItemClick()
     {
-        InventoryUI.Instance.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot, sprite);
+        Inventory inventory = (Inventory)UIManager.Instance.GetBaseUIByName("InventoryUI");
+        inventory.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot, sprite);
     }
 }

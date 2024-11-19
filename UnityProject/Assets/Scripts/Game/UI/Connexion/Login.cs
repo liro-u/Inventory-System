@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class Login : MonoBehaviour
     public TextMeshProUGUI message;
     public TMP_InputField idField;
     public TMP_InputField passwordField;
+    public Button submitButton;
+
+    void Start()
+    {
+        submitButton.onClick.AddListener(LoginButton);
+    }
 
     public void LoginButton()
     {
@@ -23,7 +30,7 @@ public class Login : MonoBehaviour
         Debug.Log("Login successful");
         GameDataManager.Instance.ConnectionData.CurrentUserData = userData;
         message.text = "";
-        ConnexionUIManager.Instance.ConnexionUI.SetActive(false);
+        UIManager.Instance.GetCurrentUIInHistory().UIRef.CloseAllPopup();
     }
 
     // This will be called if the login fails

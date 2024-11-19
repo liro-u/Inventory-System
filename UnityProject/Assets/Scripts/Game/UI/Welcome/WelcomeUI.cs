@@ -31,8 +31,8 @@ public class WelcomeUI : MonoBehaviour
         GameDataManager.Instance.ConnectionData.OnUserConnection += OnUserConnexion;
         quitButton.onClick.AddListener(QuitGame);
         startGameButton.onClick.AddListener(StartGame);
-        connectBackgroundButton.onClick.AddListener(ConnexionUIManager.Instance.ToggleConnexionUI);
-        loginButton.onClick.AddListener(ConnexionUIManager.Instance.ToggleConnexionUI);
+        connectBackgroundButton.onClick.AddListener(() => UIManager.Instance.GetCurrentUIInHistory().UIRef.OpenPopupByName("Login"));
+        loginButton.onClick.AddListener(() => UIManager.Instance.GetCurrentUIInHistory().UIRef.OpenPopupByName("Login"));
     }
 
     private void Awake()
@@ -85,6 +85,6 @@ public class WelcomeUI : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
         }
-        gameObject.SetActive(false);
+        UIManager.Instance.CleanHistory();
     }
 }
