@@ -6,6 +6,7 @@ public class GameDataManager : MonoBehaviour
     [Header("Game Data")]
     [SerializeField] private ItemDictionarySO itemAdditionalData;
     [SerializeField] private CurrencyDictionarySO currencyAdditionalData;
+    [SerializeField] private RarityDictionarySO rarityAdditionalData;
 
     [Header("Live Game Data")]
     [SerializeField] private ConnectionDataSO connectionData;
@@ -15,6 +16,7 @@ public class GameDataManager : MonoBehaviour
     // Properties to expose the fields with a public getter but no public setter
     public ItemDictionarySO ItemAdditionalData => itemAdditionalData;
     public CurrencyDictionarySO CurrencyAdditionalData => currencyAdditionalData;
+    public RarityDictionarySO RarityAdditionalData => rarityAdditionalData;
 
     public ConnectionDataSO ConnectionData => connectionData;
     public InventoryDataSO InventoryData => inventoryData;

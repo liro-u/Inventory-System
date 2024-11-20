@@ -2671,6 +2671,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 8031009805249940788, guid: 908b6692add653b4fa16b7bf95619862, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8043972517827759561, guid: 908b6692add653b4fa16b7bf95619862, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3443,6 +3447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAdditionalData: {fileID: 11400000, guid: a35abc5c4df4dd844906a1b3ae4ccffc, type: 2}
   currencyAdditionalData: {fileID: 11400000, guid: b10155f1c99d8e745aff8c7bc6c82c11, type: 2}
+  rarityAdditionalData: {fileID: 11400000, guid: d2042e22cd82dd04d8da5abf7e684531, type: 2}
   connectionData: {fileID: 0}
   inventoryData: {fileID: 0}
   currencyData: {fileID: 0}

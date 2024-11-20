@@ -16,6 +16,7 @@ public class Inventory : BaseUI
     public TextMeshProUGUI itemDescriptionText;
     public TextMeshProUGUI itemQuantityText;
     public Image itemIconImage;
+    public Image itemRarityBackgroundImage;
 
     private bool hasSimulateClickOnFirst = false;
 
@@ -83,12 +84,13 @@ public class Inventory : BaseUI
         }
     }
 
-    public void ShowItemDetails(string itemName, string description, int quantity, int maxQuantity, Sprite sprite)
+    public void ShowItemDetails(string itemName, string description, int quantity, int maxQuantity, Sprite sprite, string rarity)
     {
         itemNameText.text = itemName;
         itemDescriptionText.text = description;
         itemQuantityText.text = quantity + (maxQuantity > 0 ? " / " + maxQuantity : "");
         itemIconImage.sprite = sprite;
+        itemRarityBackgroundImage.color = GameDataManager.Instance.RarityAdditionalData.GetAdditionalDataByRarity(rarity).color;
     }
 }
 

@@ -16,6 +16,7 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI quantityText;
     [SerializeField] private Image icon;
     [SerializeField] private Button button;
+    [SerializeField] private Image itemRarityBackgroundImage;
 
 
     private void Awake()
@@ -33,11 +34,12 @@ public class ItemSlot : MonoBehaviour
 
         icon.sprite = sprite;
         quantityText.text = quantity.ToString();
+        itemRarityBackgroundImage.color = GameDataManager.Instance.RarityAdditionalData.GetAdditionalDataByRarity(userItem.itemId.rarity).color;
     }
 
     public void OnItemClick()
     {
         Inventory inventory = (Inventory)UIManager.Instance.GetBaseUIByName("InventoryUI");
-        inventory.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot, sprite);
+        inventory.ShowItemDetails(itemName, itemDescription, itemQuantity, itemId.maxQuantityPerSlot, sprite, itemId.rarity);
     }
 }
