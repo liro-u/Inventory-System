@@ -10,11 +10,11 @@ public class APIManager : MonoBehaviour
     // URLs for development and production environments for both APIs
     [Header("UserAPI")]
     public const string devUserApiUrl = "http://localhost:4000"; // User API in development
-    public const string prodUserApiUrl = "https://userapi.productionurl.com"; // User API in production
+    public const string prodUserApiUrl = "https://gameuserapi.onrender.com"; // User API in production
 
     [Header("GameAPI")]
     public const string devGameApiUrl = "http://localhost:5000"; // Game API in development
-    public const string prodGameApiUrl = "https://gameapi.productionurl.com"; // Game API in production
+    public const string prodGameApiUrl = "https://inventory-system-i057.onrender.com"; // Game API in production
 
     /// <summary>
     /// Gets the base API URL for User API based on the current environment mode.
