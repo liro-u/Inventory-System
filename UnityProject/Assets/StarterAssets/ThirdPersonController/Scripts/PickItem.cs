@@ -10,7 +10,7 @@ public class PickItem : MonoBehaviour
     private GameObject closestItem;
     private Material toonMaterial;
 
-    private float outlineWidth = 5f;
+    [SerializeField] private float outlineWidth = 5f;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -58,7 +58,8 @@ public class PickItem : MonoBehaviour
     private void OnTriggerExit(Collider collider)
     {
         GameObject item = collider.gameObject;
-        if (collectableItems.ContainsKey(item)) {
+        if (collectableItems.ContainsKey(item))
+        {
             collectableItems.Remove(item);
             if (item == closestItem)
             {
@@ -82,17 +83,56 @@ public class PickItem : MonoBehaviour
         if (collectableItems.Count > 0)
         {
             Debug.Log("Pick up: 1 " + closestItem.name);
-            collectableItems.Remove(closestItem);
-            //string itemId = GenerateItemDictionnary.idOf(itemSelected);
-            //UserItemService.AddItemQuantityToUser(itemId, 1);
-            Destroy(closestItem);
-            closestItem = null;
+            ItemData itemData = closestItem.GetComponent<ItemData>();
 
-            RestoreMaterial();
-            HighlightClosestItem();
-        } else
+            if (itemData != null)
+            {
+                if (!itemData.waitingForAPI)
+                {
+                    //Debug.Log("try pick up item");
+                    itemData.waitingForAPI = true;
+                    StartCoroutine(UserItemService.AddItemQuantityToUser(itemData._id, 1, OnPickupSuccess, OnPickupError));
+                }
+                else
+                {
+                    //Debug.Log("item is waiting for api");
+                }
+            }
+            else
+            {
+                Debug.LogError("no item data in the pickup object");
+            }
+        }
+        else
         {
-            Debug.Log("Pick up: Nothing.");
+            //Debug.Log("Pick up: Nothing.");
+        }
+    }
+
+    public void OnPickupSuccess(AddUserItem addUserItem)
+    {
+        Debug.Log("item picked up correctly");
+        collectableItems.Remove(closestItem);
+
+        Destroy(closestItem);
+        closestItem = null;
+
+        RestoreMaterial();
+        HighlightClosestItem();
+
+        GameDataManager.Instance.InventoryData.FetchUserInventory(this);
+    }
+
+    public void OnPickupError(GameAPIErrorResponse error)
+    {
+        Debug.LogError("error while adding item to inventory");
+        Debug.LogError(error.errors.global);
+
+        ItemData itemData = closestItem.GetComponent<ItemData>();
+
+        if (itemData != null)
+        {
+            itemData.waitingForAPI = false;
         }
     }
 }

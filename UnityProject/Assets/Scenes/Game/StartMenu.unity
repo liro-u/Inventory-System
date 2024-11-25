@@ -4599,6 +4599,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
+      propertyPath: sceneLoadMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: forceConnectionMode
       value: 0
       objectReference: {fileID: 0}

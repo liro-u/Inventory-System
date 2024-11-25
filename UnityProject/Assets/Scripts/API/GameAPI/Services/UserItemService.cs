@@ -3,6 +3,20 @@ using UnityEngine.Networking;
 using System.Collections;
 using System;
 
+[Serializable]
+public class AddItemPayload
+{
+    public string itemId;
+    public int quantity;
+
+    public AddItemPayload(string itemId, int quantity)
+    {
+        this.itemId = itemId;
+        this.quantity = quantity;
+    }
+}
+
+
 public static class UserItemService
 {
     private const string addItemQuantityEndpoint = "/api/userItems/addItemQuantity";
@@ -13,9 +27,10 @@ public static class UserItemService
     public static IEnumerator AddItemQuantityToUser(string itemId, int quantity, Action<AddUserItem> onSuccess, Action<GameAPIErrorResponse> onError)
     {
         var url = APIManager.Instance.GameApiUrl + addItemQuantityEndpoint;
-
-        var payload = new { itemId, quantity };
+        var payload = new AddItemPayload(itemId, quantity);
         var jsonBody = JsonUtility.ToJson(payload);
+        Debug.Log($"Payload: {jsonBody}");
+
 
         var request = new UnityWebRequest(url, "PATCH");
         var bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);

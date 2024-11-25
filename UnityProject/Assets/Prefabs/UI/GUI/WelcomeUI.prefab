@@ -3046,9 +3046,10 @@ MonoBehaviour:
   settingsButton: {fileID: 5343719683695560818}
   startGameButton: {fileID: 4613172695123670223}
   connectBackgroundButton: {fileID: 3040575816959993597}
-  useSceneId: 1
+  sceneLoadMode: 0
   nextSceneId: 1
   nextSceneName: Game
+  sceneAsset: {fileID: 102900000, guid: 65acb3c9b65d9f44dbfbddf93113a216, type: 3}
   forceConnectionMode: 0
 --- !u!1 &8761364682247766567
 GameObject:

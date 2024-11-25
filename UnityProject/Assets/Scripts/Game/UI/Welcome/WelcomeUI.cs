@@ -18,10 +18,20 @@ public class WelcomeUI : MonoBehaviour
     public Button startGameButton;
     public Button connectBackgroundButton;
 
+    public enum SceneLoadMode
+    {
+        SceneId,
+        SceneName,
+        SerializedScene
+    }
+
     [Header("Next Scene")]
-    public bool useSceneId = true;
+    public SceneLoadMode sceneLoadMode = SceneLoadMode.SceneId;
     public int nextSceneId = 1;
     public string nextSceneName = "Game";
+
+    // Serialized scene asset reference (used only in the Editor)
+    public Object sceneAsset;
 
     [Header("Debug")]
     public bool forceConnectionMode = false;
@@ -77,14 +87,30 @@ public class WelcomeUI : MonoBehaviour
 
     public void StartGame()
     {
-        if (useSceneId)
+        switch (sceneLoadMode)
         {
-            SceneManager.LoadScene(nextSceneId);
+            case SceneLoadMode.SerializedScene:
+                if (sceneAsset != null)
+                {
+                    string scenePath = UnityEditor.AssetDatabase.GetAssetPath(sceneAsset);
+                    string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+                    SceneManager.LoadScene(sceneName);
+                }
+                else
+                {
+                    Debug.LogError("Serialized Scene Asset is not set.");
+                }
+                break;
+
+            case SceneLoadMode.SceneId:
+                SceneManager.LoadScene(nextSceneId);
+                break;
+
+            case SceneLoadMode.SceneName:
+                SceneManager.LoadScene(nextSceneName);
+                break;
         }
-        else
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
+
         UIManager.Instance.CleanHistory();
     }
 }
