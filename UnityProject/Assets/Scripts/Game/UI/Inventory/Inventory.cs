@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.UI.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,8 @@ public class Inventory : BaseUI
     public TextMeshProUGUI itemQuantityText;
     public Image itemIconImage;
     public Image itemRarityBackgroundImage;
+    
+    public SortScript sortScript;
 
     private bool hasSimulateClickOnFirst = false;
 
@@ -44,7 +47,7 @@ public class Inventory : BaseUI
         UpdateInventoryGrid();
     }
 
-    private void UpdateInventoryGrid()
+    public void UpdateInventoryGrid()
     {
         // Effacer tous les éléments enfants existants dans la grille d'inventaire
         foreach (Transform child in inventoryGrid.transform)
@@ -55,8 +58,10 @@ public class Inventory : BaseUI
         if (GameDataManager.Instance.InventoryData != null)
         {
             // Get the user inventory from GameDataManager
-            var userInventory = GameDataManager.Instance.InventoryData.UserInventory;
-
+            var userInventory = new List<UserItem>(GameDataManager.Instance.InventoryData.UserInventory);
+            
+            userInventory = sortScript.SortUserItems(userInventory);
+            
             // Loop through the inventory list and créer un slot pour chaque item filtré
             foreach (var userItem in userInventory)
             {
