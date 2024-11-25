@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -286,21 +286,22 @@ MonoBehaviour:
     -
     Set the position to 0, 0, 0.
 
-    - Rotate your prefab as you want it to appear
-    in the sprite.
+    - Rotate /Position prefab as you want it to
+    appear in the sprite.
 
-    - On SpriteGenerator, you can choose if you want to overwrite
-    previous sprite or not.
+    - On SpriteGenerator, you can choose if you want to
+    overwrite previous sprite or not.
 
-    - Launch the scene and press Enter to generate them.
+    - Launch the scene and press Enter to
+    generate them.
 
-    -
-    Folder: Assets/Resources/Items/Sprites2D/
+    - Folder: Assets/Resources/Items/Sprites2D/
 
-    - Click on the PNG and set the
-    Texture Type to Sprite.
+    - Click
+    on the PNG and set the Texture Type to Sprite.
 
-    - Set the Pixel per Unit to 512.'
+    - Set the Pixel per Unit
+    to 100.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -465,6 +466,7 @@ MonoBehaviour:
   captureCamera: {fileID: 1013127036}
   models: {fileID: 664625025}
   overwrite: 1
+  generate: 0
 --- !u!4 &394855764
 Transform:
   m_ObjectHideFlags: 0
@@ -490,43 +492,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.39041686
+      value: 0.48814252
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.36997938
+      value: -0.21833736
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8139333
+      value: 0.8430347
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.21955056
+      value: 0.057777483
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -18.094
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -237.068
       objectReference: {fileID: 0}
     - target: {fileID: 2324727120317536689, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -19.144
       objectReference: {fileID: 0}
     - target: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
       propertyPath: m_Name
@@ -632,7 +634,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -661,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 1013127034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalPosition: {x: 0, y: 0, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
