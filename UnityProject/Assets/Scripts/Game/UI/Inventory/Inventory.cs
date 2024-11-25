@@ -20,6 +20,19 @@ public class Inventory : BaseUI
 
     private bool hasSimulateClickOnFirst = false;
 
+    // Propriété pour gérer le filtre actuel
+    private string currentFilter = "All"; // Par défaut, afficher tout
+    public string CurrentFilter
+    {
+        get => currentFilter;
+        set
+        {
+            currentFilter = value;
+            hasSimulateClickOnFirst = false; // Réinitialiser pour simuler un clic sur le premier élément
+            UpdateInventoryGrid();
+        }
+    }
+
     private void Start()
     {
         GameDataManager.Instance.InventoryData.OnUserInventoryChange += UpdateInventoryGrid;
@@ -44,25 +57,30 @@ public class Inventory : BaseUI
             // Get the user inventory from GameDataManager
             var userInventory = GameDataManager.Instance.InventoryData.UserInventory;
 
-            // Loop through the inventory list and create a slot for each item
+            // Loop through the inventory list and créer un slot pour chaque item filtré
             foreach (var userItem in userInventory)
             {
-                var quantity = userItem.quantity;
-                var numberOfSlots = (int)Mathf.Ceil((float)quantity / userItem.itemId.maxQuantityPerSlot);
-                if (numberOfSlots > 0)
+                if (currentFilter == "All" || userItem.itemId.type == currentFilter)
                 {
-                    for (var i = 0; i < numberOfSlots; i++)
+                    var quantity = userItem.quantity;
+                    var numberOfSlots = (int)Mathf.Ceil((float)quantity / userItem.itemId.maxQuantityPerSlot);
+                    if (numberOfSlots > 0)
                     {
-                        int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot ? userItem.itemId.maxQuantityPerSlot : quantity;
+                        for (var i = 0; i < numberOfSlots; i++)
+                        {
+                            int currentQuantity = quantity > userItem.itemId.maxQuantityPerSlot
+                                ? userItem.itemId.maxQuantityPerSlot
+                                : quantity;
 
-                        CreateItemSlot(userItem, currentQuantity);
+                            CreateItemSlot(userItem, currentQuantity);
 
-                        quantity -= userItem.itemId.maxQuantityPerSlot;
+                            quantity -= userItem.itemId.maxQuantityPerSlot;
+                        }
                     }
-                }
-                else
-                {
-                    CreateItemSlot(userItem, quantity);
+                    else
+                    {
+                        CreateItemSlot(userItem, quantity);
+                    }
                 }
             }
         }
@@ -90,7 +108,8 @@ public class Inventory : BaseUI
         itemDescriptionText.text = description;
         itemQuantityText.text = quantity + (maxQuantity > 0 ? " / " + maxQuantity : "");
         itemIconImage.sprite = sprite;
-        itemRarityBackgroundImage.color = GameDataManager.Instance.RarityAdditionalData.GetAdditionalDataByRarity(rarity).color;
+        itemRarityBackgroundImage.color =
+        GameDataManager.Instance.RarityAdditionalData.GetAdditionalDataByRarity(rarity).color;
     }
 }
 

@@ -3080,7 +3080,7 @@ MonoBehaviour:
   userData:
     _id: 672931da897528f6d295ed78
     pseudo: Valentin
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzI5MzFkYTg5NzUyOGY2ZDI5NWVkNzgiLCJpYXQiOjE3MzIwNTY1ODIsImV4cCI6MTczMjMxNTc4Mn0.G-YItFUV-C5k9UJEYEVu1cg0YiD_kNFx65KMhRUMUUo
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzI5MzFkYTg5NzUyOGY2ZDI5NWVkNzgiLCJpYXQiOjE3MzI1MzM2MTQsImV4cCI6MTczMjc5MjgxNH0.08a2hyt6BioUy9o4S9b_wR8N6Fx8CHOnqeb672TCLSc
     isAdmin: 1
     isOwner: 1
   doFakeConnection: 0

@@ -12,10 +12,19 @@ const itemSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ["weapon", "consumable", "resource", "equipment", "none"],
+      enum: [
+        "weapons",
+        "equipments",
+        "ingredients",
+        "meals",
+        "ressources",
+        "consumables",
+        "quests",
+      ],
       required: true,
       default: "none",
     },
+
     rarity: {
       type: String,
       enum: ["common", "rare", "epic", "legendary"],
