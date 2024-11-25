@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.437184, g: 0.7544493, b: 1.0290301, a: 1}
+  m_IndirectSpecularColor: {r: 0.4371835, g: 0.7544492, b: 1.02903, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3080,7 +3080,7 @@ MonoBehaviour:
   userData:
     _id: 672931da897528f6d295ed78
     pseudo: Valentin
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzI5MzFkYTg5NzUyOGY2ZDI5NWVkNzgiLCJpYXQiOjE3MzI1MzM2MTQsImV4cCI6MTczMjc5MjgxNH0.08a2hyt6BioUy9o4S9b_wR8N6Fx8CHOnqeb672TCLSc
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzI5MzFkYTg5NzUyOGY2ZDI5NWVkNzgiLCJpYXQiOjE3MzIwNTY1ODIsImV4cCI6MTczMjMxNTc4Mn0.G-YItFUV-C5k9UJEYEVu1cg0YiD_kNFx65KMhRUMUUo
     isAdmin: 1
     isOwner: 1
   doFakeConnection: 0
