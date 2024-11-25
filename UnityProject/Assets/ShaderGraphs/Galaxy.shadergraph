@@ -535,9 +535,9 @@
     "m_Guid": {
         "m_GuidSerialized": "e29dd42f-7eda-4279-987c-37207d4d2253"
     },
-    "m_Name": "MainTex",
+    "m_Name": "_MainTex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "MainTex",
+    "m_RefNameGeneratedByDisplayName": "_MainTex",
     "m_DefaultReferenceName": "_MainTex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -1134,7 +1134,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "6394309445614c1490b164684876517e",
     "m_Id": 0,
-    "m_DisplayName": "MainTex",
+    "m_DisplayName": "_MainTex",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",

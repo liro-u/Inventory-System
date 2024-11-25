@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDictionarySO: {fileID: 11400000, guid: a35abc5c4df4dd844906a1b3ae4ccffc, type: 2}
-  overrideName: 1
+  overrideName: 0
   overrideTexture: 0
   overridePrefab3D: 0
   generateItems: 0
