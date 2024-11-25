@@ -31,6 +31,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: a472c463ad84a3d49a5fc6d2ab5dbbd2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a472c463ad84a3d49a5fc6d2ab5dbbd2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Stars:
         m_Texture: {fileID: 8900000, guid: 8893a51251d085147ab34ff72daf53dc, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -57,6 +61,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _Color: {r: 0.2145959, g: 0.5073253, b: 0.8301887, a: 1}
     - _FogColor: {r: 0.5683517, g: 1.0052829, b: 3.8867924, a: 1}
     - _FogSpeed: {r: 0.2, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 1.944247, g: 5.9590073, b: 15.265939, a: 1}
