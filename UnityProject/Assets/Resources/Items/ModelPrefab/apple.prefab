@@ -140,5 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 9211319195833689127}
   _id: 673478a31db17e3eb2c3e362
   waitingForAPI: 0
+--- !u!23 &9211319195833689127 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: 1f605608d5e82fc9a9f05765c58beea3, type: 3}
+  m_PrefabInstance: {fileID: 7628312939758759754}
+  m_PrefabAsset: {fileID: 0}

@@ -70,6 +70,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5557524200842455989}
   m_SourcePrefab: {fileID: 100100000, guid: 51b9f1fa4bdbb3d46baedd4bcd91b754, type: 3}
+--- !u!23 &1115934214756900343 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: 51b9f1fa4bdbb3d46baedd4bcd91b754, type: 3}
+  m_PrefabInstance: {fileID: 1834232183867004570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1564413328094555083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 51b9f1fa4bdbb3d46baedd4bcd91b754, type: 3}
@@ -114,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 1115934214756900343}
   _id: 67499e20994651205ac86b86
   waitingForAPI: 0
 --- !u!1 &7509790046964486930 stripped

@@ -51,9 +51,8 @@ public class PickItem : MonoBehaviour
             RestoreMaterial();
 
             closestItem = closest.Key;
-            toonMaterial = closestItem.transform.GetChild(0).GetComponent<Renderer>().material;
-            toonMaterial.SetFloat("_Outline_Width", outlineWidth);
-            toonMaterial.SetColor("_Outline_Color", outlineColor);
+            ItemData itemData = closestItem.GetComponent<ItemData>();
+            itemData.SetMaterialOutline(outlineWidth, outlineColor);
         }
     }
 
@@ -75,7 +74,8 @@ public class PickItem : MonoBehaviour
     {
         if (closestItem != null)
         {
-            toonMaterial.SetFloat("_Outline_Width", 0f);
+            ItemData itemData = closestItem.GetComponent<ItemData>();
+            itemData.SetMaterialOutline(0, outlineColor);
             closestItem = null;
         }
     }

@@ -401,6 +401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 5915963506478945397}
+  - {fileID: 5606916247905757343}
+  - {fileID: 7521042369144247333}
+  - {fileID: 8039629045262095650}
   _id: 6749916a20b8953dde5465dd
   waitingForAPI: 0
 --- !u!1 &2482165203050068642

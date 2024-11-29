@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 8195718234693704212}
+  - {fileID: 9048246905954838238}
   _id: 67499f0d994651205ac86b8c
   waitingForAPI: 0
 --- !u!54 &5698561652906328360
@@ -176,6 +179,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!23 &8195718234693704212 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6448435370718032380, guid: 098e767690a5ef54eab12ec4ce7e0303, type: 3}
+  m_PrefabInstance: {fileID: 6286889280884544528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8661891653106251080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5833642641161182888, guid: 098e767690a5ef54eab12ec4ce7e0303, type: 3}
@@ -203,3 +211,8 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2209832257049147708, guid: 098e767690a5ef54eab12ec4ce7e0303, type: 3}
+--- !u!23 &9048246905954838238 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3075484530692502222, guid: 098e767690a5ef54eab12ec4ce7e0303, type: 3}
+  m_PrefabInstance: {fileID: 6286889280884544528}
+  m_PrefabAsset: {fileID: 0}

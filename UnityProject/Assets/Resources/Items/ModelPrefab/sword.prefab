@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 1516429885845764281}
   _id: 672f5a9c378a0a7688fe2e11
   waitingForAPI: 0
 --- !u!64 &4392279510133546003
@@ -138,3 +140,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!23 &1516429885845764281 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: 7408cb24d65140a4b88789f202d9b67c, type: 3}
+  m_PrefabInstance: {fileID: 217132384731935700}
+  m_PrefabAsset: {fileID: 0}

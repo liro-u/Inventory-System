@@ -94,7 +94,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7837520223426806502, guid: 74a34e5923a28bd48b234f45daab3711, type: 3}
 --- !u!1 &2061337155005086322 stripped
@@ -141,5 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe9c41ec00d7c47ba5be235185d6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 4443511758432637417}
   _id: 67499fbf994651205ac86b92
   waitingForAPI: 0
+--- !u!23 &4443511758432637417 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3310348653638407882, guid: 74a34e5923a28bd48b234f45daab3711, type: 3}
+  m_PrefabInstance: {fileID: 1178323424878610211}
+  m_PrefabAsset: {fileID: 0}
