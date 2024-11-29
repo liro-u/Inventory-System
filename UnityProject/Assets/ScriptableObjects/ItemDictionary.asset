@@ -21,10 +21,20 @@ MonoBehaviour:
   - key: 673478a31db17e3eb2c3e362
     value:
       name: Apple
-      sprite: {fileID: 21300000, guid: 0345a694989cb3846b3a635f2982f3de, type: 3}
-      prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
+      sprite: {fileID: 21300000, guid: ab80210a537924264bb65fdb40e9eb52, type: 3}
+      prefab3D: {fileID: 919132149155446097, guid: 1f605608d5e82fc9a9f05765c58beea3, type: 3}
   - key: 6734b73049af84d66815a936
     value:
       name: Mango
       sprite: {fileID: 21300000, guid: 2311094c4d0262a4a9499ab74fae5dac, type: 3}
       prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
+  - key: 674498c68bd660b2c78f0299
+    value:
+      name: banana
+      sprite: {fileID: 21300000, guid: 750d4d305853543e887013588450d4b8, type: 3}
+      prefab3D: {fileID: 8241063676608202261, guid: ab8ebcb97f8c0cde3bfe29b55834e9d6, type: 3}
+  - key: 674498d68bd660b2c78f029b
+    value:
+      name: watermelon
+      sprite: {fileID: 21300000, guid: e1a2ebe215bdd94ed898999e3b6bd1a0, type: 3}
+      prefab3D: {fileID: 1007295195061859952, guid: e1b1505f9b9f8dd4c896ad2dc6087ec1, type: 3}
