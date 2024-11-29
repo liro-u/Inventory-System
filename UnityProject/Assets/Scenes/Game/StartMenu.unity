@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4371835, g: 0.7544492, b: 1.02903, a: 1}
+  m_IndirectSpecularColor: {r: 0.437184, g: 0.7544493, b: 1.0290301, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3079,8 +3079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userData:
     _id: 672931da897528f6d295ed78
-    pseudo: Valentin
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzI5MzFkYTg5NzUyOGY2ZDI5NWVkNzgiLCJpYXQiOjE3MzIwNTY1ODIsImV4cCI6MTczMjMxNTc4Mn0.G-YItFUV-C5k9UJEYEVu1cg0YiD_kNFx65KMhRUMUUo
+    pseudo: Hakiga_Hashuki5909
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
     isAdmin: 1
     isOwner: 1
   doFakeConnection: 0
@@ -4564,7 +4564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5400209473278491463, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4594,6 +4594,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
+      propertyPath: sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 68094f65e519326448bdc32a2ddb7232, type: 3}
     - target: {fileID: 5670123143266059034, guid: 6b2dae5a12a67704ca96ab70b8ab94c1, type: 3}
       propertyPath: nextSceneId
       value: 1
