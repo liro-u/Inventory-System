@@ -19,16 +19,12 @@ public class Quit : MonoBehaviour
 
     private void OnItemClick()
     {
-        // Appeler la fonction GoBack du UIManager
+        // Appeler la fonction CleanHistory du UIManager
         var uiManager = UIManager.Instance; // Récupérer le singleton
         if (uiManager != null)
         {
-            var result = uiManager.GoBack(); // Appeler la fonction GoBack
-
-            if (result == null)
-            {
-                Debug.Log("No UI to go back to.");
-            }
+            uiManager.CleanHistory(); // Appeler CleanHistory
+            Debug.Log("UI history has been cleared.");
         }
         else
         {
@@ -36,4 +32,3 @@ public class Quit : MonoBehaviour
         }
     }
 }
-
