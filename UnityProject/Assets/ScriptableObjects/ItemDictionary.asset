@@ -16,8 +16,8 @@ MonoBehaviour:
   - key: 672f5a9c378a0a7688fe2e11
     value:
       name: Iron Sword
-      sprite: {fileID: 21300000, guid: 50d96d33db55e1c4b86c8ba4683c19bb, type: 3}
-      prefab3D: {fileID: 3100946403842458379, guid: 96db570478dd552439e2ca0104d4ff0c, type: 3}
+      sprite: {fileID: 21300000, guid: 8f7df741e8933aee9b4f07b11f602a52, type: 3}
+      prefab3D: {fileID: 1135471228595932805, guid: 66b15799ad423455ba66bba1abd3af31, type: 3}
   - key: 673478a31db17e3eb2c3e362
     value:
       name: Apple
@@ -38,3 +38,93 @@ MonoBehaviour:
       name: watermelon
       sprite: {fileID: 21300000, guid: e1a2ebe215bdd94ed898999e3b6bd1a0, type: 3}
       prefab3D: {fileID: 1007295195061859952, guid: e1b1505f9b9f8dd4c896ad2dc6087ec1, type: 3}
+  - key: 6749903120b8953dde5465d1
+    value:
+      name: axe
+      sprite: {fileID: 21300000, guid: 5d998e3ac315f0a9fa88db2e354f6c9f, type: 3}
+      prefab3D: {fileID: 7080064063930969890, guid: 7a5f0ad9946dde0c8a5a6bedcae84da0, type: 3}
+  - key: 6749904e20b8953dde5465d3
+    value:
+      name: spear
+      sprite: {fileID: 21300000, guid: 5269d18f33257b0459e54d75b75c7c00, type: 3}
+      prefab3D: {fileID: 4364402884651266864, guid: df63f46832ff2894f8d62521b39e4666, type: 3}
+  - key: 6749908920b8953dde5465d5
+    value:
+      name: shield
+      sprite: {fileID: 21300000, guid: 42511d14cd92c59508074f4b10ddca13, type: 3}
+      prefab3D: {fileID: 8391202530846124864, guid: 86d0e9cb0ec2144afa2393fce2a3e315, type: 3}
+  - key: 674990aa20b8953dde5465d7
+    value:
+      name: dagger
+      sprite: {fileID: 21300000, guid: f8cf70e12c8c16ef19bd390fcfdc93e3, type: 3}
+      prefab3D: {fileID: 6669391890600555678, guid: d0124080af6bcaec4b200ebfe453152e, type: 3}
+  - key: 674990e620b8953dde5465d9
+    value:
+      name: leather boots
+      sprite: {fileID: 21300000, guid: a6889f3b935c6de339a97b5ce48ccedf, type: 3}
+      prefab3D: {fileID: 6896995386370619467, guid: 377d641f3129594c28f1f09fc174fec2, type: 3}
+  - key: 6749913020b8953dde5465db
+    value:
+      name: leather chestplate
+      sprite: {fileID: 21300000, guid: 145b92280375e5a0aa73443747f2178e, type: 3}
+      prefab3D: {fileID: 5764819119047254214, guid: b760562763dde79109dd4c6b2ea4f2f4, type: 3}
+  - key: 6749916a20b8953dde5465dd
+    value:
+      name: leather helmet
+      sprite: {fileID: 21300000, guid: 68c0d372688322fdfafbb8d85ab20ece, type: 3}
+      prefab3D: {fileID: 1499395211128271690, guid: 86bb5f3e846af0a368cf98118198e93e, type: 3}
+  - key: 6749918220b8953dde5465df
+    value:
+      name: leather leggings
+      sprite: {fileID: 21300000, guid: 38356732369be5de0a71afd39feaaa0d, type: 3}
+      prefab3D: {fileID: 4972319324537378694, guid: 5f7480b055922432b9cb37af564da427, type: 3}
+  - key: 67499e0c994651205ac86b84
+    value:
+      name: burger
+      sprite: {fileID: 21300000, guid: 9b178da4f9b01fb5f86e2ea2d60c40e9, type: 3}
+      prefab3D: {fileID: 4044859459029262357, guid: 6350e26599f94534d88b3e78a965af5d, type: 3}
+  - key: 67499e20994651205ac86b86
+    value:
+      name: hotdog
+      sprite: {fileID: 21300000, guid: 75ff7079e31ef406580cf00ca0d12352, type: 3}
+      prefab3D: {fileID: 1564413328094555083, guid: ae44ae58e0169184180eb148665bc33d, type: 3}
+  - key: 67499e2f994651205ac86b88
+    value:
+      name: pizza
+      sprite: {fileID: 21300000, guid: cb3a76d8f35ee3295941b8c23c684e99, type: 3}
+      prefab3D: {fileID: 3506300542119194067, guid: 52e3375a10a6dbe478ab0792ed9569aa, type: 3}
+  - key: 67499f0d994651205ac86b8c
+    value:
+      name: red pepper
+      sprite: {fileID: 21300000, guid: 42b9fb3045d94c75483640e7d1070e73, type: 3}
+      prefab3D: {fileID: 6628997025555327297, guid: 44a585c1907b3b224868d9c5f1899b29, type: 3}
+  - key: 67499f75994651205ac86b8e
+    value:
+      name: salt
+      sprite: {fileID: 21300000, guid: e7ba978c811a42bbbbfe366e2bb0732d, type: 3}
+      prefab3D: {fileID: 3327935784395450410, guid: bd940fbdc33b81287ab144098f9acfe5, type: 3}
+  - key: 67499f91994651205ac86b90
+    value:
+      name: tea powder
+      sprite: {fileID: 21300000, guid: 1d86017da4f32a942bd1740b39af74ad, type: 3}
+      prefab3D: {fileID: 4542346831192423723, guid: ef83a34f21df2d57688940380a62c681, type: 3}
+  - key: 67499fbf994651205ac86b92
+    value:
+      name: wood
+      sprite: {fileID: 21300000, guid: 9748e79dac0439078a1b8515d02d167b, type: 3}
+      prefab3D: {fileID: 2061337155005086322, guid: bb5327afdfddf3b4dabf780a18375241, type: 3}
+  - key: 6749b195b011e260ee9390ee
+    value:
+      name: box
+      sprite: {fileID: 21300000, guid: da0f961663bf1ee1aa4d3cf6f090a146, type: 3}
+      prefab3D: {fileID: 2315523509510040336, guid: 3380edd36a54a5b4190be2a8b3a2a99d, type: 3}
+  - key: 6749b1d5b011e260ee9390f0
+    value:
+      name: fire camp
+      sprite: {fileID: 21300000, guid: daf38d71a3366a4cfb53b49f39584f14, type: 3}
+      prefab3D: {fileID: 4692789921745949907, guid: 7d4e2b18a37712644902ef0e57f775d3, type: 3}
+  - key: 6749b1fbb011e260ee9390f2
+    value:
+      name: sign
+      sprite: {fileID: 21300000, guid: 00cae292703ac5c45ad330838767c658, type: 3}
+      prefab3D: {fileID: 8965028247209480929, guid: ae0fefda9d15bfe4ea3e508f2313a560, type: 3}
