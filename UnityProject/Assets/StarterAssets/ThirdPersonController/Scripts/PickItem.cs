@@ -11,6 +11,7 @@ public class PickItem : MonoBehaviour
     private Material toonMaterial;
 
     [SerializeField] private float outlineWidth = 5f;
+    [SerializeField] private Color32 outlineColor = new Color32(0xe9, 0xe9, 0xaf, 0xff);
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -52,6 +53,7 @@ public class PickItem : MonoBehaviour
             closestItem = closest.Key;
             toonMaterial = closestItem.transform.GetChild(0).GetComponent<Renderer>().material;
             toonMaterial.SetFloat("_Outline_Width", outlineWidth);
+            toonMaterial.SetColor("_Outline_Color", outlineColor);
         }
     }
 
