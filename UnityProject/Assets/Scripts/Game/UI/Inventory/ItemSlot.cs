@@ -17,16 +17,21 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private Button button;
     [SerializeField] private Image itemRarityBackgroundImage;
-    [SerializeField] private Image selectionFrame; // Cadre pour indiquer la sélection
+    [SerializeField] private Image selectionFrame; 
+
+    [Header("Selection Frame Colors")]
+    [SerializeField] private Color defaultColor = Color.white;
+    [SerializeField] private Color selectedColor = Color.yellow; 
 
     private void Awake()
     {
         button.onClick.AddListener(OnItemClick);
 
-        // Assurez-vous que le cadre de sélection est désactivé par défaut
+        // S'assurer que tous les cadres utilisent la couleur par défaut au départ
         if (selectionFrame != null)
         {
-            selectionFrame.enabled = false;
+            selectionFrame.color = defaultColor;
+            selectionFrame.enabled = true; // Assurez-vous que le cadre est activé pour tous
         }
     }
 
@@ -55,22 +60,19 @@ public class ItemSlot : MonoBehaviour
 
     public void SetSelected()
     {
-        // Trouver tous les slots d'item
         var allSlots = FindObjectsOfType<ItemSlot>();
 
-        // Désactiver les cadres de sélection de tous les autres slots
         foreach (var slot in allSlots)
         {
             if (slot.selectionFrame != null)
             {
-                slot.selectionFrame.enabled = false;
+                slot.selectionFrame.color = defaultColor;
             }
         }
 
-        // Activer le cadre de sélection pour ce slot
         if (selectionFrame != null)
         {
-            selectionFrame.enabled = true;
+            selectionFrame.color = selectedColor;
         }
     }
 }
