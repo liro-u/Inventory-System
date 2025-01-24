@@ -63,7 +63,9 @@ public class SpriteGenerator : MonoBehaviour
             Destroy(rt);
             model.SetActive(false);
         }
-        AssetDatabase.Refresh();
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+#endif
         Debug.Log("All models have been saved.");
     }
 }

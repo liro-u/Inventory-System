@@ -90,6 +90,7 @@ public class WelcomeUI : MonoBehaviour
         switch (sceneLoadMode)
         {
             case SceneLoadMode.SerializedScene:
+#if UNITY_EDITOR
                 if (sceneAsset != null)
                 {
                     string scenePath = UnityEditor.AssetDatabase.GetAssetPath(sceneAsset);
@@ -100,6 +101,9 @@ public class WelcomeUI : MonoBehaviour
                 {
                     Debug.LogError("Serialized Scene Asset is not set.");
                 }
+#else
+                SceneManager.LoadScene(nextSceneId);
+#endif
                 break;
 
             case SceneLoadMode.SceneId:
